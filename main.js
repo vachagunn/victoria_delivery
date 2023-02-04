@@ -1,31 +1,22 @@
-const btnUp = {
-    el: document.querySelector('.btn-up'),
-    show() {
-      // удалим у кнопки класс btn-up_hide
-      this.el.classList.remove('btn-up_hide');
-    },
-    hide() {
-      // добавим к кнопке класс btn-up_hide
-      this.el.classList.add('btn-up_hide');
-    },
-    addEventListener() {
-      // при прокрутке содержимого страницы
-      window.addEventListener('scroll', () => {
-        // определяем величину прокрутки
-        const scrollY = window.scrollY || document.documentElement.scrollTop;
-        // если страница прокручена больше чем на 400px, то делаем кнопку видимой, иначе скрываем
-        scrollY > 400 ? this.show() : this.hide();
-      });
-      // при нажатии на кнопку .btn-up
-      document.querySelector('.btn-up').onclick = () => {
-        // переместим в начало страницы
-        window.scrollTo({
-          top: 0,
-          left: 0,
-          behavior: 'smooth'
-        });
-      }
-    }
-  }
+/* Back to top
+   ------------------------------------------------------- */
+  var pxShow = 300; // height on which the button will show
+	var fadeInTime = 400; // how slow/fast you want the button to show
+	var fadeOutTime = 400; // how slow/fast you want the button to hide
+	var scrollSpeed = 300; // how slow/fast you want the button to scroll to top. can be a value, 'slow', 'normal' or 'fast'
+
+   // Show or hide the sticky footer button
+   
+	jQuery(window).scroll(function() {
+
+		if (!( $("#header-search").hasClass('is-visible'))) {
+
+			if (jQuery(window).scrollTop() >= pxShow) {
+				jQuery("#go-top").fadeIn(fadeInTime);
+			} else {
+				jQuery("#go-top").fadeOut(fadeOutTime);
+			}
+
+		}
   
-  btnUp.addEventListener();
+  });
