@@ -87,6 +87,13 @@ table {
     opacity: 0.7;
 }
 
+.partner {
+    color: #000000;
+    background-color: #F9D229;
+    border-radius: 25px;
+    padding: 10px;
+}
+
 /* Main */
 
 .hero {
@@ -337,5 +344,5 @@ table {
     top: -23%;
 }
 
-
+/* footer */
 
